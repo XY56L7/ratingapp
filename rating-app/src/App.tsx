@@ -1,8 +1,10 @@
+// src/App.tsx
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './App.css';
+import { Emoji } from './types'; // Ha használsz típusdefiníciókat
 
-const emojis = [
+const emojis: Emoji[] = [
   { id: 1, symbol: '😡', label: 'Nagyon elégedetlen' },
   { id: 2, symbol: '😞', label: 'Elégedetlen' },
   { id: 3, symbol: '😐', label: 'Semleges' },
@@ -11,10 +13,10 @@ const emojis = [
 ];
 
 function App() {
-  const [selected, setSelected] = React.useState(null);
-  const [showThankYou, setShowThankYou] = React.useState(false);
+  const [selected, setSelected] = React.useState<number | null>(null);
+  const [showThankYou, setShowThankYou] = React.useState<boolean>(false);
 
-  const handleSelect = (id) => {
+  const handleSelect = (id: number): void => {
     setSelected(id);
     setShowThankYou(true);
     console.log(`Kiválasztott érték: ${id}`);
