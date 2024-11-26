@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './App.css';
 
@@ -11,22 +11,21 @@ const emojis = [
 ];
 
 function App() {
-  const [selected, setSelected] = useState(null);
-  const [showThankYou, setShowThankYou] = useState(false);
+  const [selected, setSelected] = React.useState(null);
+  const [showThankYou, setShowThankYou] = React.useState(false);
 
   const handleSelect = (id) => {
     setSelected(id);
     setShowThankYou(true);
-    // Itt kezelheted a kiválasztott értéket, pl. elküldés egy szerverre
     console.log(`Kiválasztott érték: ${id}`);
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (showThankYou) {
       const timer = setTimeout(() => {
         setSelected(null);
         setShowThankYou(false);
-      }, 4000); // 4000 ms = 4 másodperc
+      }, 4000);
 
       return () => clearTimeout(timer);
     }
