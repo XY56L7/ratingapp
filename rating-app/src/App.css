@@ -1,0 +1,21 @@
+/* App.css */
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Köszönő üzenet stílus */
+.text-white {
+  font-size: 1.5rem;
+}
+
+/* Kártya fix magasság beállítása (opcionális) */
+.card {
+  min-height: 150px; /* Állítsd be a kívánt magasságot */
+}
