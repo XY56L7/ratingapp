@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* src/App.css */
+.text-center {
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .text-center {
+    font-size: 1.5rem; /* Példa: Kisebb betűméret mobilon */
+  }
+}
+

@@ -35,36 +35,34 @@ function App() {
 
   return (
     <div style={{ backgroundColor: '#000', minHeight: '100vh' }}>
-      <Container
-        className="d-flex flex-column justify-content-center align-items-center"
-        style={{ minHeight: '100vh' }}
-      >
-        {!showThankYou ? (
-          <>
-            <h2 className="text-white mb-4">Mennyire elégedett a kiszolgálással?</h2>
-            <Row className="w-100 justify-content-center">
-              {emojis.map((emoji) => (
-                <Col xs={6} sm={4} md={2} key={emoji.id} className="mb-3 d-flex">
-                  <Card
-                    onClick={() => handleSelect(emoji.id)}
-                    className={`text-center ${selected === emoji.id ? 'border-primary' : ''} flex-fill`}
-                    style={{ cursor: 'pointer', backgroundColor: '#1a1a1a', color: '#fff' }}
-                  >
-                    <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                      <span style={{ fontSize: '2rem' }}>{emoji.symbol}</span>
-                      <Card.Text className="mt-2" style={{ color: '#ccc', fontSize: '0.9rem' }}>
-                        {emoji.label}
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </>
-        ) : (
-          <h2 className="text-white">Köszönjük a szavazást!</h2>
-        )}
-      </Container>
+     <Container className="d-flex flex-column justify-content-center align-items-center text-center" style={{ minHeight: '100vh' }}>
+  {!showThankYou ? (
+    <>
+      <h2 className="text-white mb-4">Mennyire elégedett a kiszolgálással?</h2>
+      <Row className="w-100 justify-content-center">
+        {emojis.map((emoji) => (
+          <Col xs={6} sm={4} md={2} key={emoji.id} className="mb-3 d-flex">
+            <Card
+              onClick={() => handleSelect(emoji.id)}
+              className={`text-center ${selected === emoji.id ? 'border-primary' : ''} flex-fill`}
+              style={{ cursor: 'pointer', backgroundColor: '#1a1a1a', color: '#fff' }}
+            >
+              <Card.Body className="d-flex flex-column justify-content-center align-items-center">
+                <span style={{ fontSize: '2rem' }}>{emoji.symbol}</span>
+                <Card.Text className="mt-2" style={{ color: '#ccc', fontSize: '0.9rem' }}>
+                  {emoji.label}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </>
+  ) : (
+    <h2 className="text-white">Köszönjük a szavazást!</h2>
+  )}
+</Container>
+
     </div>
   );
 }
